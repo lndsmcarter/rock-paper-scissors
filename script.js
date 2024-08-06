@@ -1,5 +1,3 @@
-//Create variable for computer choice 
-
 //Create function called getComputerChoice 
 function getComputerChoice() {
     //Function chooses a number between 0 and 1 
@@ -18,6 +16,21 @@ function getComputerChoice() {
     }
 }
 
-let pcChoice = getComputerChoice()
+//Create variable for computer choice, determined by the getComputerChoice function
+let pc = getComputerChoice()
 
-console.log(pcChoice)
+// Create function getHumanChoice
+function getHumanChoice() {
+    //Prompt the user to input a choice
+    let choice = prompt("Choose your warrior!")
+    //If input equals "Rock" || "Paper" || "Scissors" return value 
+    if (choice === "Rock" || "Paper" || "Scissors") {
+        return("Thank you!")
+    }
+    //Else, print "Not an option" in the console and restate the prompt -- loop 
+    else {
+        return("Not an option")
+    }
+}
+//Use getHumanChoice in variable human
+console.log(getHumanChoice())
