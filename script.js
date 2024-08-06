@@ -24,11 +24,11 @@ function getHumanChoice() {
     //Prompt the user to input a choice
     let choice = prompt("Choose your warrior!")
     //If input equals "Rock" || "Paper" || "Scissors" return value 
-    if (choice === "Rock" || "Paper" || "Scissors") {
+    if (choice === "Rock" || choice === "Paper" || choice === "Scissors") {
         return("Thank you!")
     }
     //Else, print "Not an option" in the console and restate the prompt -- loop 
-    else {
+    else if (choice != "Rock" || "Paper" || "Scissors") {
         return("Not an option")
     }
 }
