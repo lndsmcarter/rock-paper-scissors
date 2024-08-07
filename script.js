@@ -42,36 +42,50 @@ function getHumanChoice() {
 let humanScore = 0
 let computerScore = 0
 
+//Create playGame function 
 // Create playRound function to encompass both human and pc choice parameters
-function playRound(humanChoice, computerChoice) {
-    // Take computer choice and Human choice variables and compare them 
-    if (humanChoice == "Not an option") {
-        return ("Invalid entry")
+function playGame() {    
+    
+    let plays = 0
+
+    function playRound(humanChoice, computerChoice) {
+        // Take computer choice and Human choice variables and compare them 
+        if (humanChoice == "Not an option") {
+            return ("Invalid entry")
+        }
+        else if ((computerChoice == "Scissors" && humanChoice == "Rock") 
+            || (computerChoice == "Rock" && humanChoice == "Paper")
+            || (computerChoice == "Paper" && humanChoice == "Scissors")) {  
+                humanScore = humanScore + 1
+                plays = (plays + 1)
+                return(plays)
+        }
+        else if ((computerChoice == "Scissors" && humanChoice == "Paper") 
+            || (computerChoice == "Rock" && humanChoice == "Scissors") 
+            || (computerChoice == "Paper" && humanChoice == "Rock")) {
+                computerScore = computerScore + 1
+                plays = (plays + 1)
+                return(plays)
+
+        }
+        else {
+            return ("Tie!")
+        }
     }
-    else if ((computerChoice == "Scissors" && humanChoice == "Rock") 
-        || (computerChoice == "Rock" && humanChoice == "Paper")
-        || (computerChoice == "Paper" && humanChoice == "Scissors")) {
-        humanScore = humanScore + 1
-            return ("You Win!")
-    }
-    else if ((computerChoice == "Scissors" && humanChoice == "Paper") 
-         || (computerChoice == "Rock" && humanChoice == "Scissors") 
-         || (computerChoice == "Paper" && humanChoice == "Rock")) {
-        computerScore = computerScore + 1
-            return ("You Lose!")
+    
+    let round = (playRound(humanSelection, pcSelection), 0)
+
+    if (round < 5) {
+        let humanSelection = getHumanChoice();
+        let pcSelection = getComputerChoice();
+        playRound(humanSelection, pcSelection)
     }
     else {
-        return ("Tie!")
+        return("Game over")
     }
-    //Determine a winner 
-    //Add a point incrementally to the winner's score 
 }
 
 
-
-const humanSelection = getHumanChoice();
-const pcSelection = getComputerChoice();
-
-console.log(playRound(humanSelection, pcSelection))
 console.log(humanScore)
 console.log(computerScore)
+
