@@ -64,6 +64,7 @@ function playGame() {
             || (computerChoice == "Paper" && humanChoice == "Scissors")) {  
                 humanScore = humanScore + 1
                 plays = (plays + 1)
+                alert("You win!")
                 console.log(humanScore)
                 console.log(computerScore)
                 return(plays)
@@ -73,12 +74,17 @@ function playGame() {
             || (computerChoice == "Paper" && humanChoice == "Rock")) {
                 computerScore = computerScore + 1
                 plays = (plays + 1)
+                alert("You lose!")
                 console.log(humanScore)
                 console.log(computerScore)
                 return(plays)
         }
         else {
-            return ("Tie!")
+            alert("Tie!")
+            plays = (plays + 1)
+            console.log(humanScore)
+            console.log(computerScore)
+            return(plays)
         }
     }
     
