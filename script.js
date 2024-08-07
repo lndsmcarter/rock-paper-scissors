@@ -45,7 +45,10 @@ let computerScore = 0
 // Create playRound function to encompass both human and pc choice parameters
 function playRound(humanChoice, computerChoice) {
     // Take computer choice and Human choice variables and compare them 
-    if (computerChoice == "Scissors" && humanChoice == "Rock") {
+    if (humanChoice == "Not an option") {
+        return ("Invalid entry")
+    }
+    else if (computerChoice == "Scissors" && humanChoice == "Rock") {
         return ("You Win!")
     }
     else if (computerChoice == "Rock" && humanChoice == "Paper") {
