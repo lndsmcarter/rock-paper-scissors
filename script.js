@@ -22,8 +22,8 @@ let pc = getComputerChoice()
 // Create function getHumanChoice
 function getHumanChoice() {
     //Prompt the user to input a choice
-    let choice = prompt("Choose your warrior!")
-    choice = choice.toLowerCase
+    let input = prompt("Choose your warrior!")
+    let choice = input.toLowerCase();
     //If input equals "Rock" || "Paper" || "Scissors" return input 
     if (choice === "rock" || choice === "paper" || choice === "scissors") {
         return(choice)
@@ -54,6 +54,9 @@ function playGame() {
     }
     else if (computerScore < humanScore) {
         alert ("YOU WIN THE GAME")
+    }
+    else {
+        alert ("IT WAS A TIE")
     }
 
     function playRound(humanChoice, computerChoice) {
