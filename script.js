@@ -48,6 +48,12 @@ function playGame() {
     
     let plays = 0
 
+    while (plays <= 5) {
+            let humanSelection = getHumanChoice();
+            let pcSelection = getComputerChoice();
+            playRound(humanSelection, pcSelection)
+        }
+
     function playRound(humanChoice, computerChoice) {
         // Take computer choice and Human choice variables and compare them 
         if (humanChoice == "Not an option") {
@@ -72,14 +78,8 @@ function playGame() {
         }
     }
     
-    if (plays <= 5) {
-        let humanSelection = getHumanChoice();
-        let pcSelection = getComputerChoice();
-        playRound(humanSelection, pcSelection)
-    }
-    else {
-        return("Game over")
-    }
+    
+
 }
 
 
