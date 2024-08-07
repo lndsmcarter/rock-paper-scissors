@@ -23,21 +23,17 @@ let pc = getComputerChoice()
 function getHumanChoice() {
     //Prompt the user to input a choice
     let choice = prompt("Choose your warrior!")
-    //If input equals "Rock" || "Paper" || "Scissors" return value 
-    if (choice === "Rock" || choice === "Paper" || choice === "Scissors") {
+    choice = choice.toLowerCase
+    //If input equals "Rock" || "Paper" || "Scissors" return input 
+    if (choice === "rock" || choice === "paper" || choice === "scissors") {
         return(choice)
     }
     //Else, print "Not an option" in the console and restate the prompt -- loop 
     else {
         return("Not an option")
     }
-
-    // while (choice !== "Rock" || choice !== "Paper" || choice !== "Scissors") {
-    //     return("Try again")
-    //     let choice = prompt("Choose your warrior!")
-    // }
 }
-//Use getHumanChoice in variable human
+
 
 let humanScore = 0
 let computerScore = 0
@@ -65,9 +61,9 @@ function playGame() {
         if (humanChoice == "Not an option") {
             alert("Invalid entry")
         }
-        else if ((computerChoice == "Scissors" && humanChoice == "Rock") 
-            || (computerChoice == "Rock" && humanChoice == "Paper")
-            || (computerChoice == "Paper" && humanChoice == "Scissors")) {  
+        else if ((computerChoice == "Scissors" && humanChoice == "rock") 
+            || (computerChoice == "Rock" && humanChoice == "paper")
+            || (computerChoice == "Paper" && humanChoice == "scissors")) {  
                 humanScore = humanScore + 1;
                 plays = (plays + 1);
                 alert("You win!");
@@ -75,9 +71,9 @@ function playGame() {
                 console.log("Computer Score: " + computerScore);
                 return(plays);
         }
-        else if ((computerChoice == "Scissors" && humanChoice == "Paper") 
-            || (computerChoice == "Rock" && humanChoice == "Scissors") 
-            || (computerChoice == "Paper" && humanChoice == "Rock")) {
+        else if ((computerChoice == "Scissors" && humanChoice == "paper") 
+            || (computerChoice == "Rock" && humanChoice == "scissors") 
+            || (computerChoice == "Paper" && humanChoice == "rock")) {
                 computerScore = computerScore + 1;
                 plays = (plays + 1);
                 alert("You lose!");
