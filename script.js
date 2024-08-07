@@ -46,7 +46,7 @@ let computerScore = 0
 // Create playRound function to encompass both human and pc choice parameters
 function playGame() {    
     
-    let plays = 0
+    let plays = 1
 
     while (plays <= 5) {
             let humanSelection = getHumanChoice();
@@ -64,6 +64,8 @@ function playGame() {
             || (computerChoice == "Paper" && humanChoice == "Scissors")) {  
                 humanScore = humanScore + 1
                 plays = (plays + 1)
+                console.log(humanScore)
+                console.log(computerScore)
                 return(plays)
         }
         else if ((computerChoice == "Scissors" && humanChoice == "Paper") 
@@ -71,6 +73,8 @@ function playGame() {
             || (computerChoice == "Paper" && humanChoice == "Rock")) {
                 computerScore = computerScore + 1
                 plays = (plays + 1)
+                console.log(humanScore)
+                console.log(computerScore)
                 return(plays)
         }
         else {
