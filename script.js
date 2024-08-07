@@ -51,12 +51,14 @@ function playRound(humanChoice, computerChoice) {
     else if ((computerChoice == "Scissors" && humanChoice == "Rock") 
         || (computerChoice == "Rock" && humanChoice == "Paper")
         || (computerChoice == "Paper" && humanChoice == "Scissors")) {
-        return ("You Win!")
+        humanScore = humanScore + 1
+            return ("You Win!")
     }
     else if ((computerChoice == "Scissors" && humanChoice == "Paper") 
          || (computerChoice == "Rock" && humanChoice == "Scissors") 
          || (computerChoice == "Paper" && humanChoice == "Rock")) {
-        return ("You Lose!")
+        computerScore = computerScore + 1
+            return ("You Lose!")
     }
     else {
         return ("Tie!")
@@ -71,3 +73,5 @@ const humanSelection = getHumanChoice();
 const pcSelection = getComputerChoice();
 
 console.log(playRound(humanSelection, pcSelection))
+console.log(humanScore)
+console.log(computerScore)
