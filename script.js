@@ -25,12 +25,54 @@ function getHumanChoice() {
     let choice = prompt("Choose your warrior!")
     //If input equals "Rock" || "Paper" || "Scissors" return value 
     if (choice === "Rock" || choice === "Paper" || choice === "Scissors") {
-        return("Thank you!")
+        return(choice)
     }
     //Else, print "Not an option" in the console and restate the prompt -- loop 
-    else if (choice != "Rock" || "Paper" || "Scissors") {
+    else {
         return("Not an option")
     }
+
+    // while (choice !== "Rock" || choice !== "Paper" || choice !== "Scissors") {
+    //     return("Try again")
+    //     let choice = prompt("Choose your warrior!")
+    // }
 }
 //Use getHumanChoice in variable human
-console.log(getHumanChoice())
+
+let humanScore = 0
+let computerScore = 0
+
+// Create playRound function to encompass both human and pc choice parameters
+function playRound(humanChoice, computerChoice) {
+    // Take computer choice and Human choice variables and compare them 
+    if (computerChoice == "Scissors" && humanChoice == "Rock") {
+        return ("You Win!")
+    }
+    else if (computerChoice == "Rock" && humanChoice == "Paper") {
+        return ("You Win!")
+    }
+    else if (computerChoice == "Paper" && humanChoice == "Scissors") {
+        return ("You Win!")
+    }
+    else if (computerChoice == "Scissors" && humanChoice == "Paper") {
+        return ("You Lose!")
+    }
+    else if (computerChoice == "Rock" && humanChoice == "Scissors") {
+        return ("You Lose!")
+    }
+    else if (computerChoice == "Paper" && humanChoice == "Rock") {
+        return ("You Lose!")
+    }
+    else {
+        return ("Tie!")
+    }
+    //Determine a winner 
+    //Add a point incrementally to the winner's score 
+}
+
+
+
+const humanSelection = getHumanChoice();
+const pcSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, pcSelection))
