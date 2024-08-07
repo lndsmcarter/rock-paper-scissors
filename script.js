@@ -1,6 +1,6 @@
 //Create function called getComputerChoice 
 function getComputerChoice() {
-    //Function chooses a number between 0 and 1 
+    //Function chooses a random number between 0 and 1 
     const random = Math.random()
     //If random number is between 0 and .33, return "Rock"
     if (random < 0.33) {
@@ -32,7 +32,6 @@ function getHumanChoice() {
         return(null)
     }
 }
-
 
 let humanScore = 0
 let computerScore = 0
