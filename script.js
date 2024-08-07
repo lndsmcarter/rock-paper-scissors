@@ -48,22 +48,14 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice == "Not an option") {
         return ("Invalid entry")
     }
-    else if (computerChoice == "Scissors" && humanChoice == "Rock") {
+    else if ((computerChoice == "Scissors" && humanChoice == "Rock") 
+        || (computerChoice == "Rock" && humanChoice == "Paper")
+        || (computerChoice == "Paper" && humanChoice == "Scissors")) {
         return ("You Win!")
     }
-    else if (computerChoice == "Rock" && humanChoice == "Paper") {
-        return ("You Win!")
-    }
-    else if (computerChoice == "Paper" && humanChoice == "Scissors") {
-        return ("You Win!")
-    }
-    else if (computerChoice == "Scissors" && humanChoice == "Paper") {
-        return ("You Lose!")
-    }
-    else if (computerChoice == "Rock" && humanChoice == "Scissors") {
-        return ("You Lose!")
-    }
-    else if (computerChoice == "Paper" && humanChoice == "Rock") {
+    else if ((computerChoice == "Scissors" && humanChoice == "Paper") 
+         || (computerChoice == "Rock" && humanChoice == "Scissors") 
+         || (computerChoice == "Paper" && humanChoice == "Rock")) {
         return ("You Lose!")
     }
     else {
