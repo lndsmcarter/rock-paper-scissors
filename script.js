@@ -53,11 +53,17 @@ function playGame() {
             let pcSelection = getComputerChoice();
             playRound(humanSelection, pcSelection)
         }
+    if (computerScore > humanScore) {
+        alert ("YOU LOSE THE GAME")
+    }
+    else if (computerScore < humanScore) {
+        alert ("YOU WIN THE GAME")
+    }
 
     function playRound(humanChoice, computerChoice) {
         // Take computer choice and Human choice variables and compare them 
         if (humanChoice == "Not an option") {
-            return ("Invalid entry")
+            alert("Invalid entry")
         }
         else if ((computerChoice == "Scissors" && humanChoice == "Rock") 
             || (computerChoice == "Rock" && humanChoice == "Paper")
