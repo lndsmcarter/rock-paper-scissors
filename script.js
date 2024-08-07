@@ -28,9 +28,8 @@ function getHumanChoice() {
     if (choice === "rock" || choice === "paper" || choice === "scissors") {
         return(choice)
     }
-    //Else, print "Not an option" in the console and restate the prompt -- loop 
     else {
-        return("Not an option")
+        return(null)
     }
 }
 
@@ -61,7 +60,7 @@ function playGame() {
 
     function playRound(humanChoice, computerChoice) {
         // Take computer choice and Human choice variables and compare them 
-        if (humanChoice == "Not an option") {
+        if (humanChoice == null) {
             alert("Invalid entry")
         }
         else if ((computerChoice == "Scissors" && humanChoice == "rock") 
