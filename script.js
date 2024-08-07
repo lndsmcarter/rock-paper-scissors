@@ -66,16 +66,13 @@ function playGame() {
                 computerScore = computerScore + 1
                 plays = (plays + 1)
                 return(plays)
-
         }
         else {
             return ("Tie!")
         }
     }
     
-    let round = (playRound(humanSelection, pcSelection), 0)
-
-    if (round < 5) {
+    if (plays <= 5) {
         let humanSelection = getHumanChoice();
         let pcSelection = getComputerChoice();
         playRound(humanSelection, pcSelection)
@@ -86,6 +83,8 @@ function playGame() {
 }
 
 
-console.log(humanScore)
-console.log(computerScore)
+// console.log(humanScore)
+// console.log(computerScore)
+
+console.log(playGame())
 
