@@ -62,29 +62,29 @@ function playGame() {
         else if ((computerChoice == "Scissors" && humanChoice == "Rock") 
             || (computerChoice == "Rock" && humanChoice == "Paper")
             || (computerChoice == "Paper" && humanChoice == "Scissors")) {  
-                humanScore = humanScore + 1
-                plays = (plays + 1)
-                alert("You win!")
-                console.log(humanScore)
-                console.log(computerScore)
-                return(plays)
+                humanScore = humanScore + 1;
+                plays = (plays + 1);
+                alert("You win!");
+                console.log("Your score: " + humanScore);
+                console.log("Computer Score: " + computerScore);
+                return(plays);
         }
         else if ((computerChoice == "Scissors" && humanChoice == "Paper") 
             || (computerChoice == "Rock" && humanChoice == "Scissors") 
             || (computerChoice == "Paper" && humanChoice == "Rock")) {
-                computerScore = computerScore + 1
-                plays = (plays + 1)
-                alert("You lose!")
-                console.log(humanScore)
-                console.log(computerScore)
-                return(plays)
+                computerScore = computerScore + 1;
+                plays = (plays + 1);
+                alert("You lose!");
+                console.log("Your score: " + humanScore);
+                console.log("Computer Score: " + computerScore);
+                return(plays);
         }
         else {
             alert("Tie!")
-            plays = (plays + 1)
-            console.log(humanScore)
-            console.log(computerScore)
-            return(plays)
+            plays = (plays + 1);
+            console.log("Your score: " + humanScore);
+            console.log("Computer Score: " + computerScore);
+            return(plays);
         }
     }
     
