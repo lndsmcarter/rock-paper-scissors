@@ -1,30 +1,19 @@
-//Create function called getComputerChoice 
 function getComputerChoice() {
-    //Function chooses a random number between 0 and 1 
     const random = Math.random()
-    //If random number is between 0 and .33, return "Rock"
     if (random < 0.33) {
         return("Rock")
     }
-    //Else If random number is between .33 and .66, return "paper"
     if (random > 0.33 && random < 0.66 ) {
         return("Paper")
     }
-    //Else, return "scissors"
     else {
         return("Scissors")
     }
 }
 
-//Create variable for computer choice, determined by the getComputerChoice function
-let pc = getComputerChoice()
-
-// Create function getHumanChoice
 function getHumanChoice() {
-    //Prompt the user to input a choice
     let input = prompt("Choose your warrior!")
     let choice = input.toLowerCase();
-    //If input equals "Rock" || "Paper" || "Scissors" return input 
     if (choice === "rock" || choice === "paper" || choice === "scissors") {
         return(choice)
     }
@@ -36,8 +25,6 @@ function getHumanChoice() {
 let humanScore = 0
 let computerScore = 0
 
-//Create playGame function 
-// Create playRound function to encompass both human and pc choice parameters
 function playGame() {    
     
     let plays = 1
@@ -58,7 +45,6 @@ function playGame() {
     }
 
     function playRound(humanChoice, computerChoice) {
-        // Take computer choice and Human choice variables and compare them 
         if (humanChoice == null) {
             alert("Invalid entry")
         }
