@@ -29,20 +29,20 @@ function playGame() {
     
     let plays = 1
 
-    while (plays <= 5) {
-            let humanSelection = getHumanChoice();
-            let pcSelection = getComputerChoice();
-            playRound(humanSelection, pcSelection)
-        }
-    if (computerScore > humanScore) {
-        alert ("YOU LOSE THE GAME")
-    }
-    else if (computerScore < humanScore) {
-        alert ("YOU WIN THE GAME")
-    }
-    else {
-        alert ("IT WAS A TIE")
-    }
+    // while (plays <= 5) {
+    //         let humanSelection = getHumanChoice();
+    //         let pcSelection = getComputerChoice();
+    //         playRound(humanSelection, pcSelection)
+    //     }
+    // if (computerScore > humanScore) {
+    //     alert ("YOU LOSE THE GAME")
+    // }
+    // else if (computerScore < humanScore) {
+    //     alert ("YOU WIN THE GAME")
+    // }
+    // else {
+    //     alert ("IT WAS A TIE")
+    // }
 
     function playRound(humanChoice, computerChoice) {
         if (humanChoice == null) {
