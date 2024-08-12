@@ -82,17 +82,17 @@ let computerScore = 0
 
 
 // Declare variables for button calls 
-const rock = document.querySelector("#rock");
-const paper = document.querySelector("#paper");
-const scissors = document.querySelector("#scissors");
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
 
 let warriors = document.querySelector("#warriors");
 //Declare variables for button onClicks
-warriors.addEventListener("click", (event) => {
-    let selection = event.id
-
-    switch(selection.id) {
+warriors.addEventListener("click", function(event) {
+    let target = event.target
+    switch(target.id) {
         case "rock":
+            console.log("BBBBB")
             playRound("rock", getComputerChoice())
             break;
         case "paper":
