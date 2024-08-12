@@ -11,23 +11,23 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    let input = prompt("Choose your warrior!")
-    let choice = input.toLowerCase();
-    if (choice === "rock" || choice === "paper" || choice === "scissors") {
-        return(choice)
-    }
-    else {
-        return(null)
-    }
-}
+// function getHumanChoice() {
+//     let input = prompt("Choose your warrior!")
+//     let choice = input.toLowerCase();
+//     if (choice === "rock" || choice === "paper" || choice === "scissors") {
+//         return(choice)
+//     }
+//     else {
+//         return(null)
+//     }
+// }
 
 let humanScore = 0
 let computerScore = 0
 
-function playGame() {    
+// function playGame() {    
     
-    let plays = 1
+//     let plays = 1
 
     // while (plays <= 5) {
     //         let humanSelection = getHumanChoice();
@@ -79,7 +79,29 @@ function playGame() {
     
     
 
-}
 
-console.log(playGame())
 
+// Declare variables for button calls 
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+let warriors = document.querySelector("#warriors");
+//Declare variables for button onClicks
+warriors.addEventListener("click", (event) => {
+    let selection = event.id
+
+    switch(selection.id) {
+        case "rock":
+            playRound("rock", getComputerChoice())
+            break;
+        case "paper":
+            playRound("paper", getComputerChoice())
+            break;
+        case "scissors":
+            playRound("scissors", getComputerChoice())
+            break;
+    }
+});
+
+//Create functions for button clicks 
