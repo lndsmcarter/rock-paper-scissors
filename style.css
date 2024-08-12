@@ -1,7 +1,16 @@
-html {
+button {
     font-family: 'Courier New', Courier, monospace;
+    color: black;
 }
 
 #rock {
     background-color: aqua;
+}
+
+#paper {
+    background-color: rgb(255, 0, 242);
+}
+
+#scissors {
+    background-color: rgb(208, 255, 0);
 }

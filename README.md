@@ -10,3 +10,6 @@ SKILLS USED:
 - recognize scope and significance 
 - develop basic game logic 
 - use a while loop 
+
+SKILLS USED ROUND 2:
+- UI development
