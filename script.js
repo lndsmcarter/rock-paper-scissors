@@ -60,35 +60,51 @@ warriors.addEventListener("click", function(event) {
     }
 });
 
-
-function playRound(humanChoice, computerChoice) {
-    let plays = 1
+function playGame(humanChoice, computerChoice) {    
     
-    if ((computerChoice == "Scissors" && humanChoice == "rock") 
-        || (computerChoice == "Rock" && humanChoice == "paper")
-        || (computerChoice == "Paper" && humanChoice == "scissors")) {  
-            humanScore = humanScore + 1;
-            scoreBoardHuman.textContent = ("Your score: " + humanScore);
-            plays = (plays + 1);
-            alert("You win!");
-            return(plays);
+    let plays = 1
+
+    while (plays <= 5) {
+            let humanSelection = getHumanChoice();
+            let pcSelection = getComputerChoice();
+            playRound(humanSelection, pcSelection)
+        }
+    if (computerScore > humanScore) {
+        alert ("YOU LOSE THE GAME")
     }
-    else if ((computerChoice == "Scissors" && humanChoice == "paper") 
-        || (computerChoice == "Rock" && humanChoice == "scissors") 
-        || (computerChoice == "Paper" && humanChoice == "rock")) {
-            computerScore = computerScore + 1;
-            scoreBoardComputer.textContent = ("Computer Score: " + computerScore);
-            plays = (plays + 1);
-            alert("You lose!");
-            return(plays);
+    else if (computerScore < humanScore) {
+        alert ("YOU WIN THE GAME")
     }
     else {
-        alert("Tie!")
-        plays = (plays + 1);
-        return(plays);
+        alert ("IT WAS A TIE")
     }
+    function playRound() {        
+        if ((computerChoice == "Scissors" && humanChoice == "rock") 
+            || (computerChoice == "Rock" && humanChoice == "paper")
+            || (computerChoice == "Paper" && humanChoice == "scissors")) {  
+                humanScore = humanScore + 1;
+                scoreBoardHuman.textContent = ("Your score: " + humanScore);
+                plays = (plays + 1);
+                alert("You win!");
+                return(plays);
+        }
+        else if ((computerChoice == "Scissors" && humanChoice == "paper") 
+            || (computerChoice == "Rock" && humanChoice == "scissors") 
+            || (computerChoice == "Paper" && humanChoice == "rock")) {
+                computerScore = computerScore + 1;
+                scoreBoardComputer.textContent = ("Computer Score: " + computerScore);
+                plays = (plays + 1);
+                alert("You lose!");
+                return(plays);
+        }
+        else {
+            alert("Tie!")
+            plays = (plays + 1);
+            return(plays);
+        }
 
-}
+    }
+}    
     
     
 
@@ -97,21 +113,3 @@ function playRound(humanChoice, computerChoice) {
 
 
 
-// function playGame() {    
-    
-//     let plays = 1
-
-    // while (plays <= 5) {
-    //         let humanSelection = getHumanChoice();
-    //         let pcSelection = getComputerChoice();
-    //         playRound(humanSelection, pcSelection)
-    //     }
-    // if (computerScore > humanScore) {
-    //     alert ("YOU LOSE THE GAME")
-    // }
-    // else if (computerScore < humanScore) {
-    //     alert ("YOU WIN THE GAME")
-    // }
-    // else {
-    //     alert ("IT WAS A TIE")
-    // }
