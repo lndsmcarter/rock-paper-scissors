@@ -54,21 +54,19 @@ warriors.addEventListener("click", function(event) {
     let target = event.target
     switch(target.id) {
         case "rock":
-            playGame("rock", getComputerChoice())
-            break;
+            playGame("rock", getComputerChoice());
         case "paper":
-            playGame("paper", getComputerChoice())
-            break;
+            playGame("paper", getComputerChoice());
         case "scissors":
-            playGame("scissors", getComputerChoice())
-            break;
+            playGame("scissors", getComputerChoice());
     }
 });
 
 function playGame(humanChoice, computerChoice) {   
     
     while ((humanScore < 5) && (computerScore < 5)) {
-            playRound(humanChoice, computerChoice)
+            playRound(humanChoice, computerChoice);
+            break;
         }
     if (computerScore > humanScore) {
         results.appendChild(finalWinnerComputer)
@@ -105,7 +103,8 @@ function playGame(humanChoice, computerChoice) {
         }
     
     }
-}    
+} 
+   
     
     
 
