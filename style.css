@@ -2,11 +2,12 @@ body {
     background-color: black;
     color: white;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 button {
-    font-family: 'Courier New', Courier, monospace;
     color: black;
+    font-size: large;
     height: 65px;
     min-width: 200px;
 }
