@@ -1,14 +1,3 @@
-// function getHumanChoice() 
-//     let input = prompt("Choose your warrior!")
-//     let choice = input.toLowerCase();
-//     if (choice === "rock" || choice === "paper" || choice === "scissors") {
-//         return(choice)
-//     }
-//     else {
-//         return(null)
-//     }
-// }
-
 function getComputerChoice() {
     const random = Math.random()
     if (random < 0.33) {
@@ -68,7 +57,10 @@ function playGame(humanChoice, computerChoice) {
             playRound(humanChoice, computerChoice);
             break;
         }
-    if (computerScore > humanScore) {
+    if ((humanScore < 5) && (computerScore < 5)) {
+        return;
+    }
+    else if (computerScore > humanScore) {
         results.appendChild(finalWinnerComputer)
     }
     else if (computerScore < humanScore) {
