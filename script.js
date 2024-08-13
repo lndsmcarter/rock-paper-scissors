@@ -66,7 +66,6 @@ warriors.addEventListener("click", function(event) {
 });
 
 function playGame(humanChoice, computerChoice) {   
-    // let plays = 0
     
     while ((humanScore < 5) && (computerScore < 5)) {
             playRound(humanChoice, computerChoice)
@@ -81,29 +80,30 @@ function playGame(humanChoice, computerChoice) {
         alert ("IT WAS A TIE")
     }
 
-    function playRound(y, x) {        
+    function playRound(y, x) { 
+        let plays = 0       
         if ((x == "Scissors" && y == "rock") 
             || (x == "Rock" && y == "paper")
             || (x == "Paper" && y == "scissors")) {  
                 humanScore = humanScore + 1;
                 scoreBoardHuman.textContent = ("Your score: " + humanScore);
-                // plays = (plays + 1);
-                // return(plays);
+                plays = (plays + 1);
+                return(plays);
         }
         else if ((x == "Scissors" && y == "paper") 
             || (x == "Rock" && y == "scissors") 
             || (x == "Paper" && y == "rock")) {
                 computerScore = computerScore + 1;
                 scoreBoardComputer.textContent = ("Computer Score: " + computerScore);
-                // plays = (plays + 1);
-                // return(plays);
+                plays = (plays + 1);
+                return(plays);
         }
         else {
             alert("Tie!");
-            // plays = (plays + 1);
-            // return(plays);
+            plays = (plays + 1);
+            return(plays);
         }
-
+    
     }
 }    
     
