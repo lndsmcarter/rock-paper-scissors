@@ -36,9 +36,6 @@ finalWinnerComputer.textContent = "YOU LOSE THE GAME";
 results.appendChild(scoreBoardHuman);
 results.appendChild(scoreBoardComputer);
 
-
-
-
 warriors.addEventListener("click", function(event) {
     let target = event.target
     switch(target.id) {
