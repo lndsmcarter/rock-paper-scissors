@@ -24,6 +24,7 @@ function getComputerChoice() {
 
 
 // Declare variables for button calls 
+
 let humanScore = 0
 let computerScore = 0
 
@@ -67,6 +68,7 @@ function playRound(humanChoice, computerChoice) {
         || (computerChoice == "Rock" && humanChoice == "paper")
         || (computerChoice == "Paper" && humanChoice == "scissors")) {  
             humanScore = humanScore + 1;
+            scoreBoardHuman.textContent = ("Your score: " + humanScore);
             plays = (plays + 1);
             alert("You win!");
             return(plays);
@@ -75,6 +77,7 @@ function playRound(humanChoice, computerChoice) {
         || (computerChoice == "Rock" && humanChoice == "scissors") 
         || (computerChoice == "Paper" && humanChoice == "rock")) {
             computerScore = computerScore + 1;
+            scoreBoardComputer.textContent = ("Computer Score: " + computerScore);
             plays = (plays + 1);
             alert("You lose!");
             return(plays);
