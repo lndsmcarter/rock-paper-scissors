@@ -37,11 +37,16 @@ let results = document.querySelector("#results");
 
 let scoreBoardHuman = document.createElement("h2")
 let scoreBoardComputer = document.createElement("h2")
+let finalWinnerHuman = document.createElement("h1")
+let finalWinnerComputer = document.createElement("h1")
 
 scoreBoardHuman.textContent = ("Your score: " + humanScore);
 scoreBoardComputer.textContent = ("Computer Score: " + computerScore);
+finalWinnerHuman.textContent = "YOU WIN THE GAME";
+finalWinnerComputer.textContent = "YOU LOSE THE GAME";
 results.appendChild(scoreBoardHuman);
 results.appendChild(scoreBoardComputer);
+
 
 
 
@@ -49,58 +54,54 @@ warriors.addEventListener("click", function(event) {
     let target = event.target
     switch(target.id) {
         case "rock":
-            playRound("rock", getComputerChoice())
+            playGame("rock", getComputerChoice())
             break;
         case "paper":
-            playRound("paper", getComputerChoice())
+            playGame("paper", getComputerChoice())
             break;
         case "scissors":
-            playRound("scissors", getComputerChoice())
+            playGame("scissors", getComputerChoice())
             break;
     }
 });
 
-function playGame(humanChoice, computerChoice) {    
+function playGame(humanChoice, computerChoice) {   
+    // let plays = 0
     
-    let plays = 1
-
-    while (plays <= 5) {
-            let humanSelection = getHumanChoice();
-            let pcSelection = getComputerChoice();
-            playRound(humanSelection, pcSelection)
+    while ((humanScore < 5) && (computerScore < 5)) {
+            playRound(humanChoice, computerChoice)
         }
     if (computerScore > humanScore) {
-        alert ("YOU LOSE THE GAME")
+        results.appendChild(finalWinnerComputer)
     }
     else if (computerScore < humanScore) {
-        alert ("YOU WIN THE GAME")
+        results.appendChild(finalWinnerHuman)
     }
     else {
         alert ("IT WAS A TIE")
     }
-    function playRound() {        
-        if ((computerChoice == "Scissors" && humanChoice == "rock") 
-            || (computerChoice == "Rock" && humanChoice == "paper")
-            || (computerChoice == "Paper" && humanChoice == "scissors")) {  
+
+    function playRound(y, x) {        
+        if ((x == "Scissors" && y == "rock") 
+            || (x == "Rock" && y == "paper")
+            || (x == "Paper" && y == "scissors")) {  
                 humanScore = humanScore + 1;
                 scoreBoardHuman.textContent = ("Your score: " + humanScore);
-                plays = (plays + 1);
-                alert("You win!");
-                return(plays);
+                // plays = (plays + 1);
+                // return(plays);
         }
-        else if ((computerChoice == "Scissors" && humanChoice == "paper") 
-            || (computerChoice == "Rock" && humanChoice == "scissors") 
-            || (computerChoice == "Paper" && humanChoice == "rock")) {
+        else if ((x == "Scissors" && y == "paper") 
+            || (x == "Rock" && y == "scissors") 
+            || (x == "Paper" && y == "rock")) {
                 computerScore = computerScore + 1;
                 scoreBoardComputer.textContent = ("Computer Score: " + computerScore);
-                plays = (plays + 1);
-                alert("You lose!");
-                return(plays);
+                // plays = (plays + 1);
+                // return(plays);
         }
         else {
-            alert("Tie!")
-            plays = (plays + 1);
-            return(plays);
+            alert("Tie!");
+            // plays = (plays + 1);
+            // return(plays);
         }
 
     }
