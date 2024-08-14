@@ -62,14 +62,14 @@ function playGame(humanChoice, computerChoice) {
     if ((humanScore < 5) && (computerScore < 5)) {
         return;
     }
-    else if (computerScore > humanScore) {
+    else if (computerScore > humanScore) { 
         results.appendChild(finalWinnerComputer)
     }
     else if (computerScore < humanScore) {
         results.appendChild(finalWinnerHuman)
     }
     else {
-        alert ("IT WAS A TIE")
+        alert ("IT'S A TIE")
     }
 
     function playRound(humanity, computer) { 
@@ -99,10 +99,3 @@ function playGame(humanChoice, computerChoice) {
 } 
    
     
-    
-
-
-
-
-
-
