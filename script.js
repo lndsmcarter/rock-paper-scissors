@@ -55,8 +55,9 @@ function playGame(humanChoice, computerChoice) {
 
     while ((humanScore < 5) && (computerScore < 5)) {
             playRound(humanChoice, computerChoice);
-            results.appendChild(roundWinner)
-            roundWinner.textContent = ("Computer chose " + computerChoice + "! You " + winLose + "!")
+            results.appendChild(roundWinner);
+            roundWinner.textContent = ("Computer chose " + computerChoice + "! You " + winLose + "!");
+            console.log(winLose);
             break;
         }
     if ((humanScore < 5) && (computerScore < 5)) {
@@ -80,6 +81,7 @@ function playGame(humanChoice, computerChoice) {
             || (computer == "Paper" && humanity == "scissors")) {  
                 humanScore = humanScore + 1;
                 scoreBoardHuman.textContent = ("Your score: " + humanScore);
+                winLose = "WIN"
                 plays = (plays + 1);
                 return(plays);
         }
@@ -93,7 +95,6 @@ function playGame(humanChoice, computerChoice) {
                 return(winLose);
         }
         else {
-            alert("Tie!");
             plays = (plays + 1);
             winLose = "tie";
             return(plays);
