@@ -12,10 +12,14 @@ button {
     min-width: 200px;
 }
 
+#title {
+    font-size: 75px;
+}
+
 #warriors {
     display: flex;
     justify-content: space-evenly;
-    
+    font-weight: bold;
 }
 
 #rock {
