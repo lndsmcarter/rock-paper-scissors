@@ -12,8 +12,6 @@ function getComputerChoice() {
 }
 
 
-// Declare variables for button calls 
-
 let humanScore = 0
 let computerScore = 0
 
@@ -55,9 +53,10 @@ function playGame(humanChoice, computerChoice) {
 
     while ((humanScore < 5) && (computerScore < 5)) {
             playRound(humanChoice, computerChoice);
-            results.appendChild(roundWinner);
             roundWinner.textContent = ("Computer chose " + computerChoice + "! You " + winLose + "!");
+            results.appendChild(roundWinner);
             console.log(winLose);
+            console.log(plays)
             break;
         }
     if ((humanScore < 5) && (computerScore < 5)) {
@@ -82,8 +81,7 @@ function playGame(humanChoice, computerChoice) {
                 humanScore = humanScore + 1;
                 scoreBoardHuman.textContent = ("Your score: " + humanScore);
                 winLose = "WIN"
-                plays = (plays + 1);
-                return(plays);
+                return(winLose);
         }
         else if ((computer == "Scissors" && humanity == "paper") 
             || (computer == "Rock" && humanity == "scissors") 
@@ -95,9 +93,8 @@ function playGame(humanChoice, computerChoice) {
                 return(winLose);
         }
         else {
-            plays = (plays + 1);
             winLose = "tie";
-            return(plays);
+            return(winLose);
         }
         
     }
