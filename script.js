@@ -73,7 +73,6 @@ function playGame(humanChoice, computerChoice) {
     }
 
     function playRound(humanity, computer) { 
-        let plays = 0  
            
         if ((computer == "Scissors" && humanity == "rock") 
             || (computer == "Rock" && humanity == "paper")
@@ -88,7 +87,6 @@ function playGame(humanChoice, computerChoice) {
             || (computer == "Paper" && humanity == "rock")) {
                 computerScore = computerScore + 1;
                 scoreBoardComputer.textContent = ("Computer Score: " + computerScore);
-                plays = (plays + 1);
                 winLose = "LOSE";
                 return(winLose);
         }
